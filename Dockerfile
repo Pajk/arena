@@ -1,4 +1,4 @@
-FROM node:8-alpine
+FROM node:10-alpine
 
 # - Upgrade alpine packages to avoid possible os vulnerabilities
 # - Tini for Handling Kernel Signals https://github.com/krallin/tini
@@ -17,4 +17,4 @@ EXPOSE 4567
 USER node
 
 ENTRYPOINT ["/sbin/tini", "--"]
-CMD ["npm", "start"]
+CMD ["node", "index.js"]
